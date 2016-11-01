@@ -9,10 +9,6 @@ app.config(['$routeProvider', function($routeProvider) {
         templateUrl: 'view/sistema/perfil.html',
         controller: 'controller/sistema/perfilController'
     });
-    $routeProvider.when('/meu_perfil', {
-        templateUrl: 'meu_perfil.html',
-        controller: 'controller/sistema/perfilController'
-    });
     $routeProvider.when('/meus_pontos', {
         templateUrl: 'view/sistema/meus_pontos.html',
         controller: 'controller/sistema/perfilController'
