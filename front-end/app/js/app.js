@@ -9,13 +9,17 @@ app.config(['$routeProvider', function($routeProvider) {
         templateUrl: 'view/sistema/perfil.html',
         controller: 'controller/sistema/perfilController'
     });
+    $routeProvider.when('/meu_perfil', {
+        templateUrl: 'meu_perfil.html',
+        controller: 'controller/sistema/perfilController'
+    });
     $routeProvider.when('/meus_pontos', {
         templateUrl: 'view/sistema/meus_pontos.html',
         controller: 'controller/sistema/perfilController'
     });
     $routeProvider.when('/cadastrar_vendas', {
         templateUrl: 'view/sistema/cadastrar_vendas.html',
-        controller: 'controller/usuario/vendasController'
+        controller: 'vendasController'
     });
     $routeProvider.when('/listar_vendas', {
         templateUrl: 'view/sistema/listar_vendas.html',
@@ -28,6 +32,10 @@ app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/loja', {
         templateUrl: 'view/sistema/loja.html',
         controller: 'controller/usuario/lojaController'
+    });
+    $routeProvider.when('/qualificacao', {
+        templateUrl: 'view/sistema/qualificacao_usuario.html',
+        controller: 'controller/sistema/qualificacaoController'
     });
     $routeProvider.otherwise({redirectTo: '/view/sistema/home'});
 }]);
