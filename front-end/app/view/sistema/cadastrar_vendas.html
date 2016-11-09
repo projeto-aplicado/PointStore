@@ -1,12 +1,52 @@
-<div class="conteudo">
-	<h1>Cadastrar vendas</h1>
+<html >
+    <div class="form-group" >
+        <h1>Cadastrar vendas</h1>
 
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	</p>
-</div>
+        <div class="box container">
+        <div class="caixanuncio col-md-8 col-sm-6 col-xs-12">
+
+        <p>    
+        <input type="text" name="tipopontos" placeholder="Insira o Tipo de Ponto" ng-model="tipopontos"></input>
+        </p>
+        <p>
+        <input type="text" name="quantidade" placeholder="Insira a Quantidade" ng-model="quantidade" ></input>          
+        </p>
+        <p>
+        <input type="text" name="valor" placeholder="Insira o Valor" ng-model="valor" ></input>
+        </p> 
+
+        <!--
+        <p>
+        <input type="text" name="valor" placeholder="Insira o Valor" [(ngModel)]="valor" ngControl="valor" #valor="ngModel" class="form-control" ></input>
+        </p>  
+        -->      
+
+        <div>
+            <button class="btn btn-primary" ng-click="cadastrarVenda()" >Salvar</button>
+        
+
+        <p> <!-- ng-controller="vendasController" -->
+            {{tipopontos}}
+        </p>
+
+        <p>
+            {{quantidade}}
+        </p>
+
+        <p>
+            {{valor}}
+        </p>
+
+
+        </div>
+        </div>
+        </div>
+
+    </div>
+
+
+        </div><!--fim div conteudo-->
+        
+    </div>
+
+</html>
