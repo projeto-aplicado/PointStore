@@ -13,29 +13,11 @@
         </p>
         <p>
         <input type="text" name="valor" placeholder="Insira o Valor" ng-model="valor" ></input>
-        </p> 
-
-        <!--
-        <p>
-        <input type="text" name="valor" placeholder="Insira o Valor" [(ngModel)]="valor" ngControl="valor" #valor="ngModel" class="form-control" ></input>
-        </p>  
-        -->      
+        </p>   
 
         <div>
-            <button class="btn btn-primary" ng-click="cadastrarVenda()" >Salvar</button>
+            <button class="btn btn-primary" ng-click="cadastrarVenda(tipopontos, quantidade, valor)" >Salvar</button>
         
-
-        <p> <!-- ng-controller="vendasController" -->
-            {{tipopontos}}
-        </p>
-
-        <p>
-            {{quantidade}}
-        </p>
-
-        <p>
-            {{valor}}
-        </p>
 
 
         </div>
