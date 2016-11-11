@@ -2,21 +2,41 @@
 
 app.controller('vendasController', function($scope, $http, $route, $routeParams, $location) {
 
-$scope.tipopontos = null;
-$scope.quantidade = null;
-$scope.valor = null;
-
 $scope.sucessMessage;
 $scope.erroMessage;
 $scope.isEditing = false;
 
     $scope.cadastrarVenda = function(tipopontos, quantidade, valor) {
 
-        $scope.tipopontos = tipopontos;
-        $scope.quantidade = quantidade;
-        $scope.valor = valor;
-        
+        var vendaDAO = new Object();
+        vendaDAO.tipopontos = tipopontos;
+        vendaDAO.quantidade = quantidade;
+        vendaDAO.valor = valor;
+
+        var venda = angular.toJson($scope.vendaDAO);
+        $http.post('http://localhost:8080/PointStore/rest/venda', venda)
+        .success(function(retorno){
+            $scope.successMessage = retorno;
+        }).error(function(){
+            $scope.erroMessage = "Venda "+$scope.venda.nome+" não foi salva!";
+        });
     }
 
+   
+
+    $scope.listarVenda = function() {
+        $http.get('http://localhost:8080/PointStore/rest/listar')
+        .success(function(dados){
+            $scope.lista = {};
+            $scope.listaVendas = [];
+            $scope.listaVendas = dados.lista;
+           
+        }).error(function(){
+            $scope.erroMessage = "pontos não encontradas!"
+        });
+        $scope.isEditing = false;
+    }
+
+}
   
-});
+);
