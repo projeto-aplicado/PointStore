@@ -1,6 +1,6 @@
 var app = angular.module('loginController', ['ngResource'], ['ngRoute']);
 
-app.controller('loginController', function sistemaLogin($scope) {
+app.controller('loginController', function ($scope, $p1, $b) {
 
 	$scope.login = null;
 	$scope.senha = null;
@@ -9,6 +9,4 @@ app.controller('loginController', function sistemaLogin($scope) {
 			this.login = login;
 			this.senha = senha;
 	}
-
-
 });

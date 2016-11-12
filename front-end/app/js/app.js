@@ -37,5 +37,20 @@ app.config(['$routeProvider', function($routeProvider) {
         templateUrl: 'view/sistema/qualificacao_usuario.html',
         controller: 'controller/sistema/qualificacaoController'
     });
+    $routeProvider.when('/login', {
+        templateUrl: 'view/login/tela_login.html',
+        controller:  'controller/login/loginController'
+
+    });
+    $routeProvider.when('/senha', {
+        templateUrl: 'view/login/alterar_senha.html',
+        controller:  'controller/login/alterar_senhaController'
+
+    });
+    $routeProvider.when('/usuario', {
+        templateUrl: 'view/usuario/usuario.html',
+        controller:  'controller/usuario/usuarioController'
+
+    });
     $routeProvider.otherwise({redirectTo: '/view/sistema/home'});
 }]);
