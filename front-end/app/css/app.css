@@ -41,3 +41,28 @@ header{background-color: #00888b; height: 80px; color: #ffffff; display: table;}
 .footer{background-color: #00bdc1; height: 250px; color: #ffffff; border-top: 5px solid #ff5f3f;}
 .contato{}
 .redesociais{}
+
+.box-menu {
+	background: #00bdc1;
+	border-radius: 8px;
+	text-align: center;
+	padding-top: 5px;
+}
+
+.box-menu a {
+	text-decoration: none;
+	font-weight: bold;
+	color: white;
+}
+
+.box-menu a:hover {
+	color: white;
+}
+
+.box-laranja {
+	background: #ff5f3f;
+}
+
+.box-textos {
+	padding: 4px;
+}
