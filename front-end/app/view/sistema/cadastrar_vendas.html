@@ -1,38 +1,12 @@
-<html >
-    <div class="form-group" >
-        <h1>Cadastrar vendas</h1>
+<h1 class="titulo">Cadastrar vendas</h1>
 
-        <div class="box container">
-        <div class="caixanuncio col-md-8 col-sm-6 col-xs-12">
+<div class="caixanuncio col-md-6">
+    <input type="text" name="tipopontos" class="form-control formPadrao" placeholder="Insira o Tipo de Ponto" ng-model="tipopontos" required>
 
-        <p>    
-        <input type="text" name="tipopontos" placeholder="Insira o Tipo de Ponto" ng-model="tipopontos"></input>
-        </p>
-        <p>
-        <input type="text" name="quantidade" placeholder="Insira a Quantidade" ng-model="quantidade" ></input>          
-        </p>
-        <p>
-        <input type="text" name="valor" placeholder="Insira o Valor" ng-model="valor" ></input>
-        </p>   
+    <input type="text" name="quantidade" class="form-control formPadrao" placeholder="Insira a Quantidade" ng-model="quantidade" required>
+    
+    <input type="text" name="valor" class="form-control formPadrao" placeholder="Insira o Valor" ng-model="valor" required>
+    
+    <button class="botaoPadrao" ng-click="cadastrarVenda(tipopontos, quantidade, valor)" >Salvar</button>
 
-        <div>
-            <button class="btn btn-primary" ng-click="cadastrarVenda(tipopontos, quantidade, valor)" >Salvar</button>
-        
-        <p>{{vendaDAO.tipopontos}}</p>
-
-        <p>{{vendaDAO.quantidade}}</p>
-
-        <p>{{vendaDAO.valor}}</p>
-
-        </div>
-        </div>
-        </div>
-
-    </div>
-
-
-        </div><!--fim div conteudo-->
-        
-    </div>
-
-</html>
+</div>
