@@ -1,5 +1,3 @@
-//var app = angular.module('vendasController', []);
-
 app.controller('vendasController', function($scope, $http, $route, $routeParams, $location) {
 
 $scope.sucessMessage;
