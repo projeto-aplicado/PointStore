@@ -1,0 +1,19 @@
+
+	<div class="formulario col-xs-12">
+			
+		<h1 class="tituloLogin">PointStore</h1>
+
+		<input id="login" ng-model="login" type="text" name="login" class="form-control formPadrao" placeholder="login" />
+
+		<input ng-model="senha" id="senha" type="password" name="senha" class="form-control formPadrao" placeholder="senha" />
+
+		<button ng-click="logar(login, senha)" class="botaoPadrao">logar</button>
+
+		{{ login }}
+
+	</div><!-- fim da DIV formulario -->
+
+	<div class="areaDoUsuario col-xs-12">
+		<a href="#/alterar_senha">Esqueceu a senha?</a> | 
+		<a href="#/cadastro_usuario">cadastrar usuario</a>
+	</div><!-- fim da DIV Link Cadastrar Usuario -->

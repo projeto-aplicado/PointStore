@@ -1,0 +1,22 @@
+
+	<div class="formularioUsuario col-xs-12">
+		<h1 class="tituloLogin">Cadastro de Usuário</h1>
+
+		<form>
+			<input type="text" name="nome" class="form-control formPadrao" placeholder="nome" ng-model="nome" required>
+
+			<input type="text" name="sobrenome" class="form-control formPadrao" placeholder="sobrenome" ng-model="sobrenome" required>
+
+			<input type="email" name="email" class="form-control formPadrao" placeholder="email" ng-model="email" required>
+
+			<input type="text" name="login" class="form-control formPadrao" placeholder="login" ng-model="login" required>
+
+			<input type="password" name="senha" class="form-control formPadrao" placeholder="senha" ng-model="senha" required>
+
+			<button class="botaoPadrao" ng-click="gravarUsuario()">cadastrar</button>
+		</form>
+	</div><!-- fim da DIV formulario -->
+
+	<div class="areaDoUsuario col-xs-12">
+		<a href="#/login">voltar</a>
+	</div><!-- fim da DIV Link Cadastrar Usuario -->
