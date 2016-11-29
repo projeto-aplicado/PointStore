@@ -1,12 +1,12 @@
-<div class="conteudo">
-	<h1>Cadastrar vendas</h1>
+<h1 class="titulo">Cadastrar vendas</h1>
 
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	</p>
+<div class="caixanuncio col-md-6">
+    <input type="text" name="tipopontos" class="form-control formPadrao" placeholder="Insira o Tipo de Ponto" ng-model="tipopontos" required>
+
+    <input type="text" name="quantidade" class="form-control formPadrao" placeholder="Insira a Quantidade" ng-model="quantidade" required>
+    
+    <input type="text" name="valor" class="form-control formPadrao" placeholder="Insira o Valor" ng-model="valor" required>
+    
+    <button class="botaoPadrao" ng-click="cadastrarVenda(tipopontos, quantidade, valor)" >Salvar</button>
+
 </div>

@@ -3,31 +3,50 @@ var app = angular.module('sistemaVendaDePontosDeVantagem', ['ngRoute']);
 app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/view/sistema/home', {
         templateUrl: 'view/sistema/pagina_home.html',
-        controller: 'controller/sistema/homeController'
+        controller: 'homeController'
     });
     $routeProvider.when('/perfil', {
-        templateUrl: 'view/sistema/perfil.html',
-        controller: 'controller/sistema/perfilController'
+        templateUrl: 'view/sistema/meu_perfil.html',
+        controller: 'perfilController'
     });
     $routeProvider.when('/meus_pontos', {
         templateUrl: 'view/sistema/meus_pontos.html',
-        controller: 'controller/sistema/perfilController'
+        controller: 'perfilController'
     });
     $routeProvider.when('/cadastrar_vendas', {
         templateUrl: 'view/sistema/cadastrar_vendas.html',
-        controller: 'controller/usuario/vendasController'
+        controller: 'vendasController'
     });
     $routeProvider.when('/listar_vendas', {
         templateUrl: 'view/sistema/listar_vendas.html',
-        controller: 'controller/usuario/vendasController'
+        controller: 'vendasController'
     });
     $routeProvider.when('/minhas_compras', {
         templateUrl: 'view/sistema/minhas_compras.html',
-        controller: 'controller/usuario/comprasController'
+        controller: 'comprasController'
     });
     $routeProvider.when('/loja', {
         templateUrl: 'view/sistema/loja.html',
-        controller: 'controller/usuario/lojaController'
+        controller: 'lojaController'
+    });
+    $routeProvider.when('/qualificacao', {
+        templateUrl: 'view/sistema/qualificacao_usuario.html',
+        controller: 'qualificacaoController'
+    });
+    $routeProvider.when('/login', {
+        templateUrl: 'view/login/tela_login.html',
+        controller:  'loginController'
+
+    });
+    $routeProvider.when('/senha', {
+        templateUrl: 'view/login/alterar_senha.html',
+        controller:  'alterar_senhaController'
+
+    });
+    $routeProvider.when('/usuario', {
+        templateUrl: 'view/usuario/usuario.html',
+        controller:  'usuarioController'
+
     });
     $routeProvider.otherwise({redirectTo: '/view/sistema/home'});
 }]);

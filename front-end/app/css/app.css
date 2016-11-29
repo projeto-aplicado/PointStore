@@ -36,6 +36,41 @@ header{background-color: #00888b; height: 80px; color: #ffffff; display: table;}
 .areaDoUsuario{text-align: left;}
 .areaDoUsuario a{color: #777777; transition: 0.4s all 0s;}
 .areaDoUsuario a:hover{color: #ff5f3f;}
+.box-menu {
+	background: #00bdc1;
+	border-radius: 10px;
+	text-align: center;
+	padding: 20px 15px !important;
+	margin-bottom: 20px;
+}
+
+.box-menu a {
+	text-decoration: none;
+	font-weight: bold;
+	color: #ffffff;
+}
+
+.box-menu a:hover {
+	color: #ffffff;
+}
+
+.box-laranja {
+	background: #ff5f3f;
+}
+
+.box-textos {
+	padding: 4px;
+}
+h4.titulo{margin: 30px 0 50px 0 !important;}
+.conteudoQualificacao{text-align: center;}
+.iconeQualificacao{margin-top: 20px;}
+.fonteT{font-size: 18px !important;}
+.tabela{max-width: 100%; width: 100%;}
+.ajusteB{float: right;}
+.perfilTopo img{margin: 0 0 15px 0 !important;}
+
+
+
 
 /*Footer*/
 .footer{background-color: #00bdc1; height: 250px; color: #ffffff; border-top: 5px solid #ff5f3f;}
