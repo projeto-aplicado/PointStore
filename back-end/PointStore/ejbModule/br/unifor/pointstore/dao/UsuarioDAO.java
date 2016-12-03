@@ -1,6 +1,7 @@
 package br.unifor.pointstore.dao;
 
 import java.util.Collection;
+import java.util.List;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
@@ -21,7 +22,7 @@ public class UsuarioDAO {
 	public String inserirUsuario(Usuario usuario) {
 		try {
 			this.entityManager.persist(usuario);
-			return "Usuario " +usuario.getNome()+ "foi inserido com sucesso!";
+			return "Usuario " + usuario.getNome() + " foi inserido com sucesso!";
 		} catch (PersistenceException pe) {
 			return "Erro ao inserir usuario" + pe;
 		}
@@ -56,11 +57,20 @@ public class UsuarioDAO {
 			return "Usuario " + usuario.getNome() + "atualizado com sucesso";
 		} catch (PersistenceException pe) {
 			return "Erro ao atualizar usuario" + pe;
-		}		
+		}
 	}
 	
-	public String recuperarSenha(Usuario usuario){		
-		return null;
+	public String recuperarSenha(Usuario user){
+		try {
+			Usuario usuarioDetached = this.entityManager.find(Usuario.class, user.getEmail());
+			Usuario usuarioMerged = this.entityManager.merge(usuarioDetached);
+			
+			usuarioMerged.setSenha(user.getSenha());
+			
+			return "Usuario " + user.getNome() + "atualizado com sucesso";
+		} catch (PersistenceException pe) {
+			return "Erro ao atualizar usuario" + pe;
+		}
 	}
 	
 	public Collection<Usuario> listarUsuario() {

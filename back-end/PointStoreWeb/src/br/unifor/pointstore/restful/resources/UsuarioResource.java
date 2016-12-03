@@ -14,7 +14,6 @@ import javax.ws.rs.Produces;
 import br.unifor.pointstore.bean.UsuarioBeanRemote;
 import br.unifor.pointstore.entity.Usuario;
 import br.unifor.pointstore.restful.model.UsuarioVO;
-import br.unifor.pointstore.restful.model.VendasVO;
 
 @Stateless
 @Path("/usuario")
@@ -42,7 +41,7 @@ public class UsuarioResource {
         return user;
     }
 	
-	private UsuarioVO montarUsuarioVO(Usuario user) {
+	private UsuarioVO montarUsuarioVO(Collection<Usuario> collection) {
 
         UsuarioVO userVO = new UsuarioVO();
         userVO.setIdUsuario(userVO.getIdUsuario());
@@ -62,11 +61,9 @@ public class UsuarioResource {
 	
 	@GET
     @Produces("application/json")
-    public Collection<VendasVO> listaVendas() {              
+    public Collection<UsuarioVO> listaUsuario() {              
 
-        //return this.montarUsuarioVO(this.usuarioBeanRemote.listaUsuario());
-		return null;
-
+        return (Collection<UsuarioVO>) this.montarUsuarioVO(this.usuarioBeanRemote.listaUsuario());
     }
 
 	
@@ -82,6 +79,5 @@ public class UsuarioResource {
     @Produces("text/plain")
 	public String atualizarUsuario(UsuarioVO userVO){
 		return this.usuarioBeanRemote.altera(montarUsuario(userVO));
-	}
-	
+	}	
 }

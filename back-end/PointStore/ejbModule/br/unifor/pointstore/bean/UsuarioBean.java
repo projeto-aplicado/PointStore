@@ -47,4 +47,10 @@ public class UsuarioBean implements UsuarioBeanRemote{
 		return this.usuarioDao.atualizarUsuario(usuario);
 	}
 
+
+	@Override
+	public String recuperarSenha(Usuario usuario) {
+		return this.usuarioDao.recuperarSenha(usuario);
+	}
+
 }
