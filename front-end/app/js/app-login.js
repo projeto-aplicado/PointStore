@@ -7,7 +7,7 @@ app.config(['$routeProvider', function($routeProvider) {
     });
     $routeProvider.when('/alterar_senha', {
         templateUrl: 'view/login/alterar_senha.html',
-        controller: 'loginController'
+        controller: 'usuarioController'
     });
     $routeProvider.when('/cadastro_usuario', {
         templateUrl: 'view/usuario/cadastro_usuario.html',

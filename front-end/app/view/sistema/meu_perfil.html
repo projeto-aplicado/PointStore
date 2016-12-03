@@ -29,11 +29,15 @@
 
 		<input type="text" name="sobrenome" class="form-control formPadrao" placeholder="Sobrenome" ng-model="sobrenome" required>
 
+		<input type="email" name="email" class="form-control formPadrao" placeholder="E-amil" ng-model="email" required>
+
 		<input type="text" name="cpf" class="form-control formPadrao" placeholder="CPF" ng-model="cpf" required>
 		
-		<input type="text" name="telefone" class="form-control formPadrao" placeholder="Telefone" ng-model="telefone" required>
+		<input type="text" name="login" class="form-control formPadrao" placeholder="Login" ng-model="login" required>
+
+		<input type="password" name="senha" class="form-control formPadrao" placeholder="Senha" ng-model="senha" required>
 		
-		<button class="botaoPadrao" ng-click="">atualizar</button>
+		<button class="botaoPadrao" ng-click="atualizarPerfilUsuario(nome, sobrenome, email, cpf, login, senha)">atualizar</button>
 
 	</form>
 

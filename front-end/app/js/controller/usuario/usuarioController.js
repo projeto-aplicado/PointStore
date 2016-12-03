@@ -9,16 +9,29 @@ app.controller('usuarioController', function($scope, $http, $route, $routeParams
         usuarioDAO.login = login;
         usuarioDAO.senha = senha;
 
-        /*var usuario = angular.toJson($scope.usuarioDAO);
-        $http.post('http://localhost:8080/PointStore/rest/usuario', usuario)
+        var usuario = angular.toJson(usuarioDAO);
+        $http.post('http://localhost:8080/PointStoreWeb/rest/usuario', usuario)
         .success(function(retorno){
-            $scope.successMessage = retorno;
+            alert(retorno);
         }).error(function(){
-            $scope.erroMessage = "Venda "+$scope.venda.nome+" não foi salva!";
-        });*/
-
-		alert("Nome completo: " + usuarioDAO.nome + " " + usuarioDAO.sobrenome + " email: " + usuarioDAO.email + " login: " + usuarioDAO.login + " senha: " + usuarioDAO.senha);
-
+            erroMessage = "Usuario "+usuarioDAO.nome+" não foi salvo!";
+        });
 	}
+
+
+    $scope.recuperarSenhaUsuario = function(email, senha){
+        var usuarioDAO = new Object();
+        usuarioDAO.email = email;
+        usuarioDAO.senha = senha;
+
+        var usuario = angular.toJson(usuarioDAO);
+        $http.put('http://localhost:8080/PointStoreWeb/rest/usuarioLogin/'+email, usuario)
+        .success(function(retorno){
+            alert(retorno);
+        }).error(function(){
+            erroMessage = "Usuario "+usuarioDAO.email+" não foi salvo!";
+        });
+
+    }
 
 });
