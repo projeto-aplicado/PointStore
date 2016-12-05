@@ -1,9 +1,12 @@
 package br.unifor.pointstore.restful.resources;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.websocket.server.PathParam;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.PUT;
@@ -21,58 +24,28 @@ public class LoginResource {
 	@EJB
     private UsuarioBeanRemote usuarioBeanRemote;
 	
-
-//	private Usuario montarUsuario(UsuarioVO userVO) {
-//
-//        Usuario user = new Usuario();
-//        user.setIdUsuario(userVO.getIdUsuario());
-//        user.setNome(userVO.getNome());
-//        user.setSobrenome(userVO.getSobrenome());
-//        user.setCredito(userVO.getCredito());
-//        user.setEmail(userVO.getEmail());
-//        user.setLogin(userVO.getLogin());
-//        user.setSenha(userVO.getSenha());
-//        user.setMeusPontos(userVO.getMeusPontos());
-//        user.setMinhasCompras(userVO.getMinhasCompras());
-//        user.setMinhasVenda(userVO.getMinhasVenda());
-//        user.setMinhasQualificacoes(userVO.getMinhasQualificacoes());
-//
-//        return user;
-//    }
-//	
-//	private UsuarioVO montarUsuarioVO(Collection<Usuario> collection) {
-//
-//        UsuarioVO userVO = new UsuarioVO();
-//        userVO.setIdUsuario(userVO.getIdUsuario());
-//        userVO.setNome(userVO.getNome());
-//        userVO.setSobrenome(userVO.getSobrenome());
-//        userVO.setCredito(userVO.getCredito());
-//        userVO.setEmail(userVO.getEmail());
-//        userVO.setLogin(userVO.getLogin());
-//        userVO.setSenha(userVO.getSenha());
-//        userVO.setMeusPontos(userVO.getMeusPontos());
-//        userVO.setMinhasCompras(userVO.getMinhasCompras());
-//        userVO.setMinhasVenda(userVO.getMinhasVenda());
-//        userVO.setMinhasQualificacoes(userVO.getMinhasQualificacoes());
-//
-//        return userVO;
-//    }
 	
 	
 	private Usuario montarUsuario(UsuarioVO userVO) {
 
         Usuario user = new Usuario();
+        user.setEmail(userVO.getEmail());
         user.setSenha(userVO.getSenha());
 
         return user;
     }
 	
-	private UsuarioVO montarUsuarioVO(Collection<Usuario> collection) {
+	private List<UsuarioVO> montarUsuarioVO(Collection<Usuario> collection) {
+		List<UsuarioVO> list = new ArrayList<UsuarioVO>();
+		for (Usuario usuario : collection) {
+	
+			UsuarioVO userVO = new UsuarioVO();
+			userVO.setEmail(usuario.getEmail());
+			userVO.setSenha(usuario.getSenha());
+		}
 
-        UsuarioVO userVO = new UsuarioVO();
-        userVO.setSenha(userVO.getSenha());
 
-        return userVO;
+        return list;
     }
 	
 	@GET
@@ -87,7 +60,7 @@ public class LoginResource {
 	@Path("{email}")
     @Consumes("application/json")
     @Produces("text/plain")
-	public String recuperarSenhaUsuario(UsuarioVO userVO){
+	public String recuperarSenhaUsuario(UsuarioVO userVO, @PathParam("email") String email){
 		return this.usuarioBeanRemote.recuperarSenha(montarUsuario(userVO));
 	}
 

@@ -19,9 +19,6 @@ public class VendasBean implements VendasBeanRemote {
 	@EJB
 	private VendaDAO vendasDAO;
 	
-	private Vendas vendas;
-	private MinhasVendas minhasVendas;
-	
 	
 	public void avaliarVenda(){}
 	
@@ -47,11 +44,5 @@ public class VendasBean implements VendasBeanRemote {
 	public Vendas busca(Long id) {
 		// TODO Auto-generated method stub
 		return null;
-	}
-
-	@Override
-	public String altera(Vendas vendas) {
-		return this.vendasDAO.atualizarVenda(vendas);
-	}
-	
+	}	
 }

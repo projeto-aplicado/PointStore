@@ -19,7 +19,7 @@ public class LojaDAO {
 	
 	public Collection<Loja> listarUsuario() {
 
-        return this.entityManager.createQuery("SELECT l FROM Loja l").getResultList();
+        return this.entityManager.createQuery("SELECT l FROM lojas l").getResultList();
     }
 	
 	

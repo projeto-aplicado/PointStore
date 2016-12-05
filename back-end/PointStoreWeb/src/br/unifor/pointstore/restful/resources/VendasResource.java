@@ -7,7 +7,6 @@ import javax.ejb.Stateless;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
@@ -24,17 +23,19 @@ public class VendasResource {
 	
 	private Vendas montarVendas(VendasVO vendasVO) {
 		
-		Vendas vendas = new Vendas();
-		
-		return vendas;
+//		Vendas vendas = new Vendas();
+//		
+//		return vendas;
+		return null;
 	}
 	
-	private VendasVO montarVendasVO(Vendas vendas) {
+	private VendasVO montarVendasVO(Collection<Vendas> collection) {
 		
-		VendasVO vendasVO = new VendasVO();
+//		VendasVO vendasVO = new VendasVO();
+//	
+//		return vendasVO;
 		
-		
-		return vendasVO;
+		return null;
 		
 	}
 	
@@ -43,7 +44,7 @@ public class VendasResource {
     public Collection<VendasVO> listaVendas() {              
 
         //return this.montarVendasVO(this.vendasBeanRemote.listaVendas());  
-		return null;
+		return (Collection<VendasVO>) this.montarVendasVO(this.vendasBeanRemote.listaVendas());
 
     }
 	
@@ -52,13 +53,6 @@ public class VendasResource {
     @Produces("text/plain")
 	public String inserirVenda(VendasVO vendasVO){
 		return this.vendasBeanRemote.insere(montarVendas(vendasVO));
-	}
-	
-	@PUT
-    @Consumes("application/json")
-    @Produces("text/plain")
-	public String atualizarVenda(VendasVO vendasVO){
-		return this.vendasBeanRemote.altera(montarVendas(vendasVO));
 	}
 	
 }

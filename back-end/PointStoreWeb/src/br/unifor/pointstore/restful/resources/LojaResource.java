@@ -17,7 +17,7 @@ import br.unifor.pointstore.restful.model.LojaVO;
 public class LojaResource {
 	
 	@EJB
-	private LojaBeanRemote lojaBeanRemote;
+	private LojaBeanRemote lojaBean;
 	
 	private Loja montarLoja(LojaVO lojaVO) {
 
@@ -37,9 +37,9 @@ public class LojaResource {
 	
 	@GET
     @Produces("application/json")
-    public Collection<LojaVO> listaUsuario() {              
+    public Collection<LojaVO> listaLojas() {              
 
-        return (Collection<LojaVO>) this.montarLojaVO(this.lojaBeanRemote.listaLojas());
+        return (Collection<LojaVO>) this.montarLojaVO(this.lojaBean.listaLojas());
     }
 
 }

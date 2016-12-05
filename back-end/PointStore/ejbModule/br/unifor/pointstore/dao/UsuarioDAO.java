@@ -62,12 +62,16 @@ public class UsuarioDAO {
 	
 	public String recuperarSenha(Usuario user){
 		try {
-			Usuario usuarioDetached = this.entityManager.find(Usuario.class, user.getEmail());
+			//Usuario usuarioDetached = this.entityManager.find(Usuario.class, user.getEmail());
+			Usuario usuarioDetached = (Usuario) this.entityManager.createQuery("SELECT user from Usuario user where user.email = :email")
+					 											  .setParameter("email",user.getEmail() ).getSingleResult();
 			Usuario usuarioMerged = this.entityManager.merge(usuarioDetached);
+			
+			
 			
 			usuarioMerged.setSenha(user.getSenha());
 			
-			return "Usuario " + user.getNome() + "atualizado com sucesso";
+			return "Usuario " + usuarioDetached.getNome() + " atualizado com sucesso";
 		} catch (PersistenceException pe) {
 			return "Erro ao atualizar usuario" + pe;
 		}

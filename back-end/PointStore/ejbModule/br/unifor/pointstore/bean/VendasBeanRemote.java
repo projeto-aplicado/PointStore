@@ -13,6 +13,6 @@ public interface VendasBeanRemote {
     public String insere(Vendas vendas);
     public String remove(Long id);    
     public Vendas busca(Long id);
-    public String altera(Vendas vendas);
+    //public String altera(Vendas vendas);
 
 }
