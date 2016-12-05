@@ -13,8 +13,7 @@ app.controller('loginController', function ($scope, $http, $route, $routeParams,
 		var usuarioDAO = new Object();
         usuarioDAO.email = email;
         usuarioDAO.senha = senha;
-
-        alert("email: " + usuarioDAO.email + " senha: " + usuarioDAO.senha);
+        
 	}
 
 });

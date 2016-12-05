@@ -11,7 +11,7 @@ $scope.isEditing = false;
         vendaDAO.quantidade = quantidade;
         vendaDAO.valor = valor;
 
-        var venda = angular.toJson($scope.vendaDAO);
+        var venda = angular.toJson(vendaDAO);
         $http.post('http://localhost:8080/PointStore/rest/venda', venda)
         .success(function(retorno){
             $scope.successMessage = retorno;
@@ -19,8 +19,6 @@ $scope.isEditing = false;
             $scope.erroMessage = "Venda "+$scope.venda.nome+" não foi salva!";
         });
     }
-
-   
 
     $scope.listarVenda = function() {
         $http.get('http://localhost:8080/PointStore/rest/listar')
