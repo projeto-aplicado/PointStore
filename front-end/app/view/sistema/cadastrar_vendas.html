@@ -2,12 +2,19 @@
 
 <div class="caixanuncio col-md-6">
 
-    <input type="text" name="tipopontos" class="form-control formPadrao" placeholder="Insira o Tipo de Ponto" ng-model="tipopontos" required>
+    <p>
+        <select class="form-control" ng-model="tipoDePontos">
+            <option value="TAM" ng-selected="tipoDePontos==TAM">TAM</option>
+            <option value="GOL" ng-selected="tipoDePontos==GOL">GOL</option>
+            <option value="TUDO AZUL" ng-selected="tipoDePontos==TUDO AZUL">TUDO AZUL</option>
+            <option value="DOTS" ng-selected="tipoDePontos==DOTS">DOTS</option>
+        </select>
+    </p>
 
     <input type="text" name="quantidade" class="form-control formPadrao" placeholder="Insira a Quantidade" ng-model="quantidade" required>
     
     <input type="text" name="valor" class="form-control formPadrao" placeholder="Insira o Valor" ng-model="valor" required>
-    
-    <button class="botaoPadrao" ng-click="cadastrarVenda(tipopontos, quantidade, valor)" >Salvar</button>
+
+    <button class="botaoPadrao" ng-click="cadastrarVenda(tipoDePontos, quantidade, valor)">Salvar</button>
 
 </div>
