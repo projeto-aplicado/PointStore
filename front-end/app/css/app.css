@@ -17,7 +17,9 @@ header, footer{display: table !important;}
 header{background-color: #00888b; height: 80px; color: #ffffff; display: table;}
 .headerTopoUser{display: table;}
 .logo{}
-.nomeusuario{}
+.nomeusuario{margin: 30px 0 0 0;}
+.nomeusuario a{color: #ffffff !important; font-weight: bold;}
+
 .headerMenu{background-color: #00bdc1; height: 80px; display: table;}
 .menuBloco{padding: 10px 15px !important; display: table;}
 
@@ -68,7 +70,6 @@ h4.titulo{margin: 30px 0 50px 0 !important;}
 .tabela{max-width: 100%; width: 100%;}
 .ajusteB{float: right;}
 .perfilTopo img{margin: 0 0 15px 0 !important;}
-
 
 
 

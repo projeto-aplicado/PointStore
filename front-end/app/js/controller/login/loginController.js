@@ -1,19 +1,25 @@
 app.controller('loginController', function ($scope, $http, $route, $routeParams, $location) {
 
-	$scope.login = null;
-	$scope.senha = null;
+	$scope.logarUsuario = function(login, senha) {
+		var logarDAO = new Object();
+		logarDAO.login = login;
+		logarDAO.senha = senha;
 
-	$scope.logar = function(login, senha) {
-			this.login = login;
-			this.senha = senha;
-			alert("login: " +this.login+ " senha: " +this.senha);
-	}
+		var logar = angular.toJson(logarDAO);
+        $http.post('http://localhost:8080/PointStoreWeb/rest/usuarioLogin', logar)
+        .success(function(retorno){
+            if (retorno != undefined && retorno != null) {
+            	localStorage.setItem("usuario", JSON.stringify(retorno));
+            	window.location.href = 'home.html';
+            }else{
+            	alert("Usuário ou senha inválidos!");
+            }
 
-	$scope.atualizarUsuario = function(email, senha) {
-		var usuarioDAO = new Object();
-        usuarioDAO.email = email;
-        usuarioDAO.senha = senha;
-        
+        }).error(function(){
+            $scope.erroMessage = "Usuario "+logarDAO.login+" não foi logado!";
+        });
+
+			
 	}
 
 });

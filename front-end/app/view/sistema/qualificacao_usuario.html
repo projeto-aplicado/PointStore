@@ -3,26 +3,25 @@
 <div class="iconeQualificacao col-md-3 col-md-offset-4">
     <div class="col-md-12 box-menu">
         <img src="img/icone-perfil.PNG" alt="icone do perfil" />
-    </div>
+    </div><!-- fim da Div Icone Qualificação -->
 
     <div class="conteudoQualificacao col-xs-12">
         <p>
             <label> Avalie o Usuário aqui: </label>
         </p>
 
-        <div class="estrelas">
-            <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
+        <div class="estrelas">            
             <label for="cm_star-1"><i class="fa fonteT"></i></label>
-            <input type="radio" id="cm_star-1" name="fb" value="1"/>
+            <input type="radio" id="cm_star-1" name="fb" value="1" checked />
+            
             <label for="cm_star-2"><i class="fa fonteT"></i></label>
             <input type="radio" id="cm_star-2" name="fb" value="2"/>
+            
             <label for="cm_star-3"><i class="fa fonteT"></i></label>
             <input type="radio" id="cm_star-3" name="fb" value="3"/>
-            <label for="cm_star-4"><i class="fa fonteT"></i></label>
-            <input type="radio" id="cm_star-4" name="fb" value="4"/>
-            <label for="cm_star-5"><i class="fa fonteT"></i></label>
-            <input type="radio" id="cm_star-5" name="fb" value="5"/>
-        </div>
-    </div>
+
+            <button class="botaoPadrao" ng-click="cadastrarVenda(tipoDePontos, quantidade, valor)">Finalizar compra</button>
+        </div><!-- fim da Div Estrelas -->
+    </div><!-- fim da Div Conteudo Qualificação -->
    
 </div>

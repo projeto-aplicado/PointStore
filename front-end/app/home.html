@@ -14,8 +14,12 @@
     <script src="js/app.js"></script>
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/flaunt.js"></script>
+    <script src="js/funcoesJquery.js"></script>
     <script src="js/controller/sistema/loginController.js"></script>
 	<script src="js/controller/sistema/vendasController.js"></script>
+	<script src="js/controller/sistema/perfilController.js"></script>
+	<script src="js/controller/sistema/lojasController.js"></script>
+	<script src="js/controller/sistema/qualificacaoController.js"></script>
 </head>
 <body>
 
@@ -26,7 +30,7 @@
 	        </div> <!-- fim da div da logo -->
 
 	        <div class="nomeusuario col-xs-12 col-sm-6 col-md-6">
-	            nome do usuario | <a>logout</a>
+	            <span id="nome_usuario">Nome do usuário</span> | <a href="#">deslogar</a>
 	        </div>
 	    </div>
 	</header>
@@ -70,17 +74,26 @@
 	    <div class="container">
 	        <div class="contato col-xs-12 col-sm-6 col-md-8">
 	            <h2>Suporte</h2>
-	            <p>Precisa de ajuda? </p> 
-	            <p>Receba ajuda com compras ou o uso de conteúdo se algo não estiver funcionando conforme esperado,</p>
-				<p>Mande um e-mail para suporte@pointstore.com ou entre em contato através de nossas Redes Sociais</p>
 	        </div>
 	        <div class="redesociais col-xs-12 col-sm-6 col-md-4">
 	            <h2>Redes Sociais</h2>
-				<img src="img/icone-facebook.png" alt="Facebook">
-				<img src="img/icone-twitter.png" alt="Twitter">
+				<a href="">
+                	<img src="img/icone-facebook.PNG" alt="Facebook">
+                </a>
+				<a href="">
+                    <img src="img/icone-twitter.PNG" alt="Twitter">                    
+                </a>
 	        </div> 
 	    </div>
 	</footer>
 
 </body>
+<script type="text/javascript">
+    var usuario = null;
+	if(localStorage.usuario != undefined){
+		usuario = JSON.parse(localStorage.usuario);
+		$("#nome_usuario").html(usuario.nome);
+	}
+
+</script>
 </html>

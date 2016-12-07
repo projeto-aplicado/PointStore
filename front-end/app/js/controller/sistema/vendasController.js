@@ -12,9 +12,9 @@ $scope.isEditing = false;
         vendaDAO.valor = valor;
 
         var venda = angular.toJson(vendaDAO);
-        $http.post('http://localhost:8080/PointStore/rest/venda', venda)
+        $http.post('http://localhost:8080/PointStoreWeb/rest/venda', venda)
         .success(function(retorno){
-            $scope.successMessage = retorno;
+            alert(retorno);
         }).error(function(){
             $scope.erroMessage = "Venda "+$scope.venda.nome+" não foi salva!";
         });

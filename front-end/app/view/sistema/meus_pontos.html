@@ -25,18 +25,18 @@
 
 <div class="conteudoPage col-md-6">
     <p>
-        <select class="form-control">
-            <option>TAM</option>
-            <option>GOL</option>
-            <option>TUDO AZUL</option>
-            <option>DOTS</option>
+        <select class="form-control" ng-model="tipoDePontos">
+            <option value="TAM" ng-selected="tipoDePontos==TAM">TAM</option>
+            <option value="GOL" ng-selected="tipoDePontos==GOL">GOL</option>
+            <option value="TUDO AZUL" ng-selected="tipoDePontos==TUDO AZUL">TUDO AZUL</option>
+            <option value="DOTS" ng-selected="tipoDePontos==DOTS">DOTS</option>
         </select>
     </p>
 
     <p>
-        <input type="text" name="quantidadePonto" class="form-control formPadrao" placeholder="quantidade de pontos">
+        <input type="text" name="quantidadePonto" class="form-control formPadrao" placeholder="quantidade de pontos" ng-model="quantidadePonto">
     </p>
 
-    <button class="botaoPadrao">cadastrar</button>
+    <button class="botaoPadrao" ng-click="cadastrarTiposDePontos(tipoDePontos, quantidadePonto)">cadastrar</button>
 
 </div>
