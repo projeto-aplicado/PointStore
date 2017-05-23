@@ -4,8 +4,6 @@ import java.util.Collection;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 
 import br.unifor.pointstore.dao.UsuarioDAO;
 import br.unifor.pointstore.entity.Usuario;
@@ -51,6 +49,12 @@ public class UsuarioBean implements UsuarioBeanRemote{
 	@Override
 	public String recuperarSenha(Usuario usuario) {
 		return this.usuarioDao.recuperarSenha(usuario);
+	}
+
+
+	@Override
+	public Usuario logarUsuario(Usuario userLogin) {
+		return this.usuarioDao.logarUsuario(userLogin);
 	}
 
 }

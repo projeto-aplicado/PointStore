@@ -15,5 +15,6 @@ public interface UsuarioBeanRemote {
     public Usuario busca(Long id);
     public String altera(Usuario usuario);
     public String recuperarSenha(Usuario usuario);
+    public Usuario logarUsuario(Usuario userLogin);
 
 }

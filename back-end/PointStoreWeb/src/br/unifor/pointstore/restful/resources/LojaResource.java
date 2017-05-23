@@ -1,10 +1,14 @@
 package br.unifor.pointstore.restful.resources;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
@@ -27,12 +31,16 @@ public class LojaResource {
         return loja;
     }
 	
-	private LojaVO montarLojaVO(Collection<Loja> collection) {
+	private List<LojaVO> montarLojaVO(Collection<Loja> collection) {
+		List<LojaVO> list = new ArrayList<LojaVO>();
+		for (Loja loja : collection) {
+	
+			LojaVO lojaVO = new LojaVO();
+			lojaVO.setNome(loja.getNome());
+		}
 
-        LojaVO lojaVO = new LojaVO();
-        lojaVO.setNome(lojaVO.getNome());
 
-        return lojaVO;
+        return list;
     }
 	
 	@GET
@@ -41,5 +49,4 @@ public class LojaResource {
 
         return (Collection<LojaVO>) this.montarLojaVO(this.lojaBean.listaLojas());
     }
-
 }

@@ -17,7 +17,7 @@ public class LojaDAO {
 	@PersistenceContext
 	private EntityManager entityManager;
 	
-	public Collection<Loja> listarUsuario() {
+	public Collection<Loja> listarLojas() {
 
         return this.entityManager.createQuery("SELECT l FROM lojas l").getResultList();
     }

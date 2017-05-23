@@ -16,7 +16,7 @@ public class LojaBean implements LojaBeanRemote {
 
 	@Override
 	public Collection<Loja> listaLojas() {
-		return this.lojaDAO.listarUsuario();
+		return this.lojaDAO.listarLojas();
 	}
 
 }

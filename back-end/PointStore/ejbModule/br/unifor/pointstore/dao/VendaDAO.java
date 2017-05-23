@@ -26,18 +26,6 @@ public class VendaDAO {
 	
 	public Collection<Vendas> listarVendas() {
 
-        return this.entityManager.createQuery("SELECT v FROM vendas v").getResultList();
+        return this.entityManager.createQuery("SELECT v FROM Vendas v").getResultList();
     }
-	
-//	public String atualizarVenda(Vendas vendas){
-//		try {
-//			Vendas vendasDetached = this.entityManager.find(Vendas.class, vendas.getIdVendas());
-//			Vendas vendasMerged = this.entityManager.merge(vendasDetached);
-//			vendasMerged.setStatus(vendas.getStatus());
-//			
-//			return "Venda " + vendas.getTitulo() + "atualizado com sucesso!";
-//		} catch (PersistenceException pe) {
-//			return "Erro ao ratualizar a venda do produdo " + pe;
-//		}
-//	}
 }

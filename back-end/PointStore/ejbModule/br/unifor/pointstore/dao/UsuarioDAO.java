@@ -1,15 +1,12 @@
 package br.unifor.pointstore.dao;
 
 import java.util.Collection;
-import java.util.List;
 
-import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
 
-import br.unifor.pointstore.bean.UsuarioBeanRemote;
 import br.unifor.pointstore.entity.Usuario;
 
 @Stateless
@@ -49,12 +46,9 @@ public class UsuarioDAO {
 			usuarioMerged.setCredito(usuario.getCredito());
 			usuarioMerged.setLogin(usuario.getLogin());
 			usuarioMerged.setSenha(usuario.getSenha());
-			usuarioMerged.setMeusPontos(usuario.getMeusPontos());
-			usuarioMerged.setMinhasCompras(usuario.getMinhasCompras());
-			usuarioMerged.setMinhasVenda(usuario.getMinhasVenda());
-			usuarioMerged.setMinhasQualificacoes(usuario.getMinhasQualificacoes());
 			
-			return "Usuario " + usuario.getNome() + "atualizado com sucesso";
+			
+			return "Usuario " + usuario.getNome() + " atualizado com sucesso";
 		} catch (PersistenceException pe) {
 			return "Erro ao atualizar usuario" + pe;
 		}
@@ -62,7 +56,6 @@ public class UsuarioDAO {
 	
 	public String recuperarSenha(Usuario user){
 		try {
-			//Usuario usuarioDetached = this.entityManager.find(Usuario.class, user.getEmail());
 			Usuario usuarioDetached = (Usuario) this.entityManager.createQuery("SELECT user from Usuario user where user.email = :email")
 					 											  .setParameter("email",user.getEmail() ).getSingleResult();
 			Usuario usuarioMerged = this.entityManager.merge(usuarioDetached);
@@ -81,5 +74,12 @@ public class UsuarioDAO {
 
         return this.entityManager.createQuery("SELECT u FROM Usuario u").getResultList();
     }
+	
+	public Usuario logarUsuario(Usuario userLogin){
+		Usuario usuarioDetached = (Usuario) this.entityManager.createQuery("SELECT user from Usuario user where user.login = :login and user.senha = :senha")
+				  .setParameter("login", userLogin.getLogin() ).setParameter("senha", userLogin.getSenha()).getSingleResult();
+		
+		return usuarioDetached;
+	}
 	
 }

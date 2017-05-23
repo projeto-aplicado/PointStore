@@ -11,6 +11,7 @@ public class UsuarioVO {
 	private String nome;
 	private String sobrenome;
 	private String credito;
+	private String cpf;
 	private String email;
 	private String login;
 	private String senha;
@@ -19,6 +20,14 @@ public class UsuarioVO {
 	private MinhasVendas minhasVenda;	
 	private MinhasQualificacoes minhasQualificacoes;
 	
+	
+	
+	public String getCpf() {
+		return cpf;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
 	public Integer getIdUsuario() {
 		return idUsuario;
 	}

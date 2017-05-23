@@ -1,0 +1,79 @@
+a:link{border: none !important; text-decoration: none !important;}
+a:visited{border: none !important; text-decoration: none !important;}
+a:hover{border: none !important; text-decoration: none !important;}
+a:focus{border: none !important; text-decoration: none !important;}
+
+a img{border: none !important; text-decoration: none !important;}
+
+*::-moz-placeholder {
+    color: #000000;
+}
+
+body {background-color: #f2f2f2 !important; color: #00000;}
+
+
+/* TOPO */
+header, footer{display: table !important;}
+header{background-color: #00888b; height: 80px; color: #ffffff; display: table;}
+.headerTopoUser{display: table;}
+.logo{}
+.nomeusuario{margin: 30px 0 0 0;}
+.nomeusuario a{color: #ffffff !important; font-weight: bold;}
+
+.headerMenu{background-color: #00bdc1; height: 80px; display: table;}
+.menuBloco{padding: 10px 15px !important; display: table;}
+
+
+/* BOX */
+.boxFull{display: table;}
+.boxLogin{margin-top: 10%; margin-bottom: 5%; height: 300px; text-align: center; display: table;}
+.box{height: 400px; display: table; padding: 0 15px 30px 15px;}
+.titulo{color: #00bdc1;}
+.tituloLogin{color: #777777; margin: 0 0 40px 0 !important;}
+.conteudo{padding: 0 !important;}
+.formPadrao{margin: 0 0 15px 0; border: 2px solid #00bdc1 !important; border-radius: 15px !important; 
+    height: 40px !important;}
+.botaoPadrao{color: #ffffff; background-color: #ff5f3f; border: 1px solid #ff5f3f; float: left; width: 100px;
+    height: 40px; margin: 0 0 30px 0; border-radius: 15px; }
+.areaDoUsuario{text-align: left;}
+.areaDoUsuario a{color: #777777; transition: 0.4s all 0s;}
+.areaDoUsuario a:hover{color: #ff5f3f;}
+.box-menu {
+	background: #00bdc1;
+	border-radius: 10px;
+	text-align: center;
+	padding: 20px 15px !important;
+	margin-bottom: 20px;
+}
+
+.box-menu a {
+	text-decoration: none;
+	font-weight: bold;
+	color: #ffffff;
+}
+
+.box-menu a:hover {
+	color: #ffffff;
+}
+
+.box-laranja {
+	background: #ff5f3f;
+}
+
+.box-textos {
+	padding: 4px;
+}
+h4.titulo{margin: 30px 0 50px 0 !important;}
+.conteudoQualificacao{text-align: center;}
+.iconeQualificacao{margin-top: 20px;}
+.fonteT{font-size: 18px !important;}
+.tabela{max-width: 100%; width: 100%;}
+.ajusteB{float: right;}
+.perfilTopo img{margin: 0 0 15px 0 !important;}
+.blocoLojas .botaoPadrao{margin: 10px 0 0 0 !important;}
+
+
+/*Footer*/
+.footer{background-color: #00bdc1; height: 250px; color: #ffffff; border-top: 5px solid #ff5f3f;}
+.contato{}
+.redesociais img{margin: 0 10px 0 0; float: left;}

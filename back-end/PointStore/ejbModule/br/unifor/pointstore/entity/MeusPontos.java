@@ -24,7 +24,7 @@ public class MeusPontos implements Serializable{
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer idMeusPontos;
 	
-	private Integer quantidade;
+	private String quantidade;
 	
 	@OneToOne(cascade=CascadeType.PERSIST)
 	@JoinColumn(name="id_loja")
@@ -38,11 +38,11 @@ public class MeusPontos implements Serializable{
 		this.idMeusPontos = idMeusPontos;
 	}
 
-	public Integer getQuantidade() {
+	public String getQuantidade() {
 		return quantidade;
 	}
 
-	public void setQuantidade(Integer quantidade) {
+	public void setQuantidade(String quantidade) {
 		this.quantidade = quantidade;
 	}
 

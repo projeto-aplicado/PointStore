@@ -1,6 +1,8 @@
 package br.unifor.pointstore.restful.resources;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
@@ -12,7 +14,9 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
 import br.unifor.pointstore.bean.UsuarioBeanRemote;
+import br.unifor.pointstore.entity.Loja;
 import br.unifor.pointstore.entity.Usuario;
+import br.unifor.pointstore.restful.model.LojaVO;
 import br.unifor.pointstore.restful.model.UsuarioVO;
 
 @Stateless
@@ -31,33 +35,29 @@ public class UsuarioResource {
         user.setSobrenome(userVO.getSobrenome());
         user.setCredito(userVO.getCredito());
         user.setEmail(userVO.getEmail());
+        user.setCpf(userVO.getCpf());
         user.setLogin(userVO.getLogin());
         user.setSenha(userVO.getSenha());
-        user.setMeusPontos(userVO.getMeusPontos());
-        user.setMinhasCompras(userVO.getMinhasCompras());
-        user.setMinhasVenda(userVO.getMinhasVenda());
-        user.setMinhasQualificacoes(userVO.getMinhasQualificacoes());
 
         return user;
     }
 	
-	private UsuarioVO montarUsuarioVO(Collection<Usuario> collection) {
-
-        UsuarioVO userVO = new UsuarioVO();
-        userVO.setIdUsuario(userVO.getIdUsuario());
-        userVO.setNome(userVO.getNome());
-        userVO.setSobrenome(userVO.getSobrenome());
-        userVO.setCredito(userVO.getCredito());
-        userVO.setEmail(userVO.getEmail());
-        userVO.setLogin(userVO.getLogin());
-        userVO.setSenha(userVO.getSenha());
-        userVO.setMeusPontos(userVO.getMeusPontos());
-        userVO.setMinhasCompras(userVO.getMinhasCompras());
-        userVO.setMinhasVenda(userVO.getMinhasVenda());
-        userVO.setMinhasQualificacoes(userVO.getMinhasQualificacoes());
-
-        return userVO;
+	private List<UsuarioVO> montarUsuarioVO(Collection<Usuario> collection) {
+		List<UsuarioVO> list = new ArrayList<UsuarioVO>();
+		for (Usuario user : collection) {
+			UsuarioVO userVO = new UsuarioVO();
+	        userVO.setIdUsuario(user.getIdUsuario());
+	        userVO.setNome(user.getNome());
+	        userVO.setSobrenome(user.getSobrenome());
+	        userVO.setCredito(user.getCredito());
+	        userVO.setEmail(user.getEmail());
+	        userVO.setLogin(user.getLogin());
+	        userVO.setSenha(user.getSenha());
+	     
+		}
+        return list;
     }
+	
 	
 	@GET
     @Produces("application/json")
@@ -73,6 +73,8 @@ public class UsuarioResource {
 	public String inserirUsuario(UsuarioVO userVO){
 		return this.usuarioBeanRemote.insere(montarUsuario(userVO));
 	}
+	
+
 	
 	@PUT
     @Consumes("application/json")
